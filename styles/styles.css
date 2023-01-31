@@ -60,7 +60,9 @@ hr {
   padding: 2rem 0;
   margin-bottom: 5.5rem;
 }
-
+.none {
+  display:none;
+}
 .content-about {
   background: #F6F6F6;
   text-align: center;
