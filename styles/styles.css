@@ -39,9 +39,6 @@ body {
 .img-shadow {
   display: none;
 }
-
-
-
 hr {
   border: 1px solid #828282;
   transform: matrix(1, 0, 0, 1, 0, 0);
@@ -60,9 +57,7 @@ hr {
   padding: 2rem 0;
   margin-bottom: 5.5rem;
 }
-.none {
-  display: none;
-}
+
 .content-about {
   background: #F6F6F6;
   text-align: center;
@@ -175,10 +170,96 @@ span {
   padding: 2.5rem 0 6.8rem 0;
   }
 
+.header-burger, .header-menu {
+display: none;
+}
+
 @media screen and (max-width: 640px) {
-.header .container, .img-cont, .main-page .tansform-p {
+hr, .img-cont, .header{
   display: none;
-  }
+}
+.header-body {
+position: relative;
+z-index: 2;
+height: 80px;
+}
+.header-burger {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.header-burger:before,
+.header-burger:after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.header-burger:before {
+  top: 0;
+}
+
+.header-burger:after {
+  bottom: 0;
+}
+
+.header-burger.active-burger:before {
+  transform: rotate(45deg);
+  top: 9px;
+}
+
+.header-burger.active-burger:after {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+.header-burger.active-burger span {
+  transform: scale(0);
+}
+
+.header-burger span {
+  position: absolute;
+  background-color: black;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  top: 9px;
+  transition: all 0.3s ease 0s;
+}
+.header-body {
+  position: relative;
+  height: 50px;
+}
+
+.header-menu {
+  font-size: 1.5rem;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 70px 20px 20px 35px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.header-menu.active-burger {
+  top: 0;
+  transition: all 0.5s ease 0s;
+}
+
+.header-menu a {
+  padding-bottom: .5rem;
+}
+
 .home-icon {
     position: absolute;
     top: 3.5rem;
@@ -187,9 +268,7 @@ span {
     padding: .3rem;
     display: block;
 }
-.home-icon:active {
-  display: none;
-}
+
 .main-sadow {
   display: inline-block;
 }
@@ -212,22 +291,21 @@ span {
 .shadow {
   display: flex;
 }
+.flex-header{
+  margin-top: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.flex-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+}
 }
 
-.shadow {
-  width: 50%;
-  justify-content:space-between;
-  padding: 2rem ;
-  position: relative;
-}
-.ing-sg {
-    position: absolute;
-      top: 1rem;
-      right: 1rem;
-      cursor: pointer;
-      padding: .3rem;
-      display: block;
-}
 .language {
   display: flex;
   transform: rotate(90deg);
